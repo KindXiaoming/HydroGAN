@@ -1,0 +1,11 @@
+#connect to remote server:
+ssh -p 20179 ziming@162.105.151.22
+
+#Exit:
+ctrl+d
+
+#copy remote files to local machine:
+scp -P 20179 -r ziming@162.105.151.22:~/Hydro/hydro_0_1.py ~/
+
+#copy local files to remote server:
+scp -P 20179 hydro_0_0.py ziming@162.105.151.22:~/Hydro
