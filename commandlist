@@ -4,8 +4,23 @@ ssh -p 20179 ziming@162.105.151.22
 #Exit:
 ctrl+d
 
-#copy remote files to local machine:
-scp -P 20179 -r ziming@162.105.151.22:~/Hydro/hydro_0_1.py ~/
+#copy remote files to local machine: (not a directory problem)
+scp -P 20179 -r ziming@162.105.151.22:~/Hydro/hydro_0_1.py ~/ (notice it's scp, not cp)
 
 #copy local files to remote server:
 scp -P 20179 hydro_0_0.py ziming@162.105.151.22:~/Hydro
+
+#convert jupyter notebook to python file
+jupyter nbconvert --to python hydro_0_2.ipynb
+
+#Sometimes error may occur :No route to host
+reconnect wirelessPKU
+
+#to find if there is current processes running:
+nvidia-smi
+
+#gpu
+usrname:ziming pw:123456 ip:162.105.151.22 port:20179
+
+#li-cpu
+ssh -X liuziming@162.105.238.19 pw:liuziming
